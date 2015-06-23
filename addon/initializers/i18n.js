@@ -6,7 +6,7 @@ export function initialize(registry, application) {
     'route',
     'view'
   ].forEach(type => {
-    application.inject(type,  'i18n', 'service:i18n');
+    application.inject(type, 'i18n', 'service:i18n');
   });
 }
 
