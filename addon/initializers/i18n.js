@@ -1,4 +1,6 @@
-export function initialize(registry, application) {
+export function initialize() {
+  // Support older and newer style initializer calls
+  const application = arguments[1] || arguments[0];
   [
     'component',
     'controller',
