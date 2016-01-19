@@ -2,13 +2,12 @@ import Ember from 'ember';
 import { initialize } from '../../../initializers/i18n';
 import { module, test } from 'qunit';
 
-var container, application;
+let application;
 
 module('Unit | Initializer | i18n', {
-  beforeEach: function() {
+  beforeEach() {
     Ember.run(function() {
       application = Ember.Application.create();
-      container = application.__container__;
       application.deferReadiness();
     });
   }
@@ -22,10 +21,11 @@ test('it registers correctly', function(assert) {
       assert.equal(serviceName, 'service:i18n');
     }
   });
-  initialize(container, mockApp);
+  initialize(mockApp);
 });
 
 test('it registers following types', function(assert) {
+  assert.expect(5);
   const types = Ember.A([
     'component',
     'controller',
@@ -38,7 +38,7 @@ test('it registers following types', function(assert) {
       assert.ok(types.contains(type), `it should register type: ${type}`);
     }
   });
-  initialize(container, mockApp);
+  initialize(mockApp);
 });
 
 test('it works with (registry, application)', function(assert) {
@@ -47,7 +47,7 @@ test('it works with (registry, application)', function(assert) {
       assert.ok(true, 'it should be called');
     }
   });
-  initialize(container, mockApp);
+  initialize(null, mockApp);
 });
 
 test('it works with (application)', function(assert) {
