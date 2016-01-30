@@ -1,4 +1,5 @@
 # ember-i18n-inject
+[![npm version](https://badge.fury.io/js/ember-i18n-inject.svg)](https://badge.fury.io/js/ember-i18n-inject)
 [![Build Status](https://travis-ci.org/kellyselden/ember-i18n-inject.svg?branch=master)](https://travis-ci.org/kellyselden/ember-i18n-inject)
 
 This addon makes `this.i18n` available in following: `component, controller, model, route, view`;
