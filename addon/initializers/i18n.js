@@ -15,5 +15,5 @@ export function initialize() {
 export default {
   name: 'i18n',
   after: 'ember-i18n',
-  initialize: initialize
+  initialize
 };
