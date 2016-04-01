@@ -13,7 +13,6 @@ module('Unit | Initializer | i18n', {
   }
 });
 
-// Replace this with your real tests.
 test('it registers correctly', function(assert) {
   const mockApp = Ember.Object.create({
     inject(type, propertyName, serviceName) {
