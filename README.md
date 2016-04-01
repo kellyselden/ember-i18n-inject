@@ -25,4 +25,4 @@ This addon makes `this.i18n` available in following: `component, controller, mod
 
 * `ember build`
 
-For more information on using ember-cli, visit [http://www.ember-cli.com/](http://www.ember-cli.com/).
+For more information on using ember-cli, visit [http://ember-cli.com/](http://ember-cli.com/).
