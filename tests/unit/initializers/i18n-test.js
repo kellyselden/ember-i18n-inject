@@ -1,4 +1,7 @@
-import Ember from 'ember';
+import { A } from '@ember/array';
+import EmberObject from '@ember/object';
+import Application from '@ember/application';
+import { run } from '@ember/runloop';
 import { initialize } from '../../../initializers/i18n';
 import { module, test } from 'qunit';
 
@@ -6,15 +9,15 @@ let application;
 
 module('Unit | Initializer | i18n', {
   beforeEach() {
-    Ember.run(function() {
-      application = Ember.Application.create();
+    run(function() {
+      application = Application.create();
       application.deferReadiness();
     });
   }
 });
 
 test('it registers correctly', function(assert) {
-  const mockApp = Ember.Object.create({
+  const mockApp = EmberObject.create({
     inject(type, propertyName, serviceName) {
       assert.equal(propertyName, 'i18n');
       assert.equal(serviceName, 'service:i18n');
@@ -25,14 +28,14 @@ test('it registers correctly', function(assert) {
 
 test('it registers following types', function(assert) {
   assert.expect(5);
-  const types = Ember.A([
+  const types = A([
     'component',
     'controller',
     'model',
     'route',
     'view'
   ]);
-  const mockApp = Ember.Object.create({
+  const mockApp = EmberObject.create({
     inject(type) {
       assert.ok(types.contains(type), `it should register type: ${type}`);
     }
@@ -41,7 +44,7 @@ test('it registers following types', function(assert) {
 });
 
 test('it works with (registry, application)', function(assert) {
-  const mockApp = Ember.Object.create({
+  const mockApp = EmberObject.create({
     inject() {
       assert.ok(true, 'it should be called');
     }
@@ -50,7 +53,7 @@ test('it works with (registry, application)', function(assert) {
 });
 
 test('it works with (application)', function(assert) {
-  const mockApp = Ember.Object.create({
+  const mockApp = EmberObject.create({
     inject() {
       assert.ok(true, 'it should be called');
     }
