@@ -37,7 +37,7 @@ test('it registers following types', function(assert) {
   ]);
   const mockApp = EmberObject.create({
     inject(type) {
-      assert.ok(types.contains(type), `it should register type: ${type}`);
+      assert.ok(types.includes(type), `it should register type: ${type}`);
     }
   });
   initialize(mockApp);
