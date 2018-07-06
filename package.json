@@ -1,6 +1,6 @@
 {
   "name": "ember-i18n-inject",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "description": "Common initializer injections for ember-i18n",
   "keywords": [
     "ember",
